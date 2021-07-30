@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.fabricmc.caveaoc.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+  ],
+  "client": [
+    "CavesAndCrittersMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "cavesandcritters",
+  "version": "${version}",
+
+  "name": "Caves & Critters",
+  "description": "A unique cave exploration and adventure based mod.",
+  "authors": [
+    "AOCAWOL"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "LGPL-v3",
+  "icon": "assets/cavesandcritters/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.fabricmc.caveaoc.CavesAndCrittersMain"
+    ]
+  },
+  "mixins": [
+    "cavesandcritters.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
