@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "cavesandcritters:block/medium_peridot_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "cavesandcritters:block/medium_peridot_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "cavesandcritters:block/medium_peridot_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "cavesandcritters:block/medium_peridot_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "cavesandcritters:block/medium_peridot_bud"
+    },
+    "facing=west": {
+      "model": "cavesandcritters:block/medium_peridot_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

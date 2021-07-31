@@ -27,7 +27,7 @@ public class CACBlocks {
 
     //------------------------------------------------------------------------
     static Block createPeridotCrystal(int light, int height, int xzOffset, BlockSoundGroup sound, String id) {
-        Block createBlock = new AmethystClusterBlock(height, xzOffset, AbstractBlock.Settings.of(Material.AMETHYST, MapColor.EMERALD_GREEN).requiresTool().nonOpaque().sounds(sound).ticksRandomly().strength(1.5f).luminance((state) -> light));
+        Block createBlock = new AmethystClusterBlock(height, xzOffset, AbstractBlock.Settings.of(Material.AMETHYST, MapColor.EMERALD_GREEN).nonOpaque().sounds(sound).ticksRandomly().strength(1.5f).luminance((state) -> light));
         createBlock(createBlock, id);
         return createBlock;
     }

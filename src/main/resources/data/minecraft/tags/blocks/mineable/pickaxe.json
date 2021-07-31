@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
-    "cavesandcritters:peridot_cluster"
+    "cavesandcritters:peridot_cluster",
+    "cavesandcritters:large_peridot_bud",
+    "cavesandcritters:medium_peridot_bud",
+    "cavesandcritters:small_peridot_bud",
+    "cavesandcritters:raw_peridot_block",
+    "cavesandcritters:raw_budding_peridot_block"
   ]
 }

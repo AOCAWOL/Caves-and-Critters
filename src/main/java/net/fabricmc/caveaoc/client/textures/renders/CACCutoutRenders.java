@@ -11,7 +11,9 @@ public class CACCutoutRenders {
         CavesAndCrittersMain.LOGGER.debug("BYG: Rendering Texture Cutouts...");
 
         BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.PERIDOT_CLUSTER, RenderLayer.getCutoutMipped());
-
+        BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.LARGE_PERIDOT_BUD, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.MEDIUM_PERIDOT_BUD, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.SMALL_PERIDOT_BUD, RenderLayer.getCutoutMipped());
 
         for (Block potBlock : CACBlocks.flowerPotBlocks)
             BlockRenderLayerMap.INSTANCE.putBlock(potBlock, RenderLayer.getCutout());

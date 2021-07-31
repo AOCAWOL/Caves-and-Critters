@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "cavesandcritters:block/small_peridot_bud"
+  }
+}

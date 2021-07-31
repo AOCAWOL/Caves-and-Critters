@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cavesandcritters:block/large_peridot_bud"
+  },
+  "display": {
+    "head": {
+      "translation": [ 0, 4, 0 ]
+    }
+  }
+}
