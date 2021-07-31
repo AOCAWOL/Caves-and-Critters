@@ -1,10 +1,10 @@
 package net.fabricmc.caveaoc.core;
 
 import net.fabricmc.caveaoc.CavesAndCrittersMain;
+import net.fabricmc.caveaoc.common.properties.items.CACToolMaterials;
+import net.fabricmc.caveaoc.common.properties.items.DaggerItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -24,6 +24,8 @@ public class CACItems {
     public static final Item SMALL_PERIDOT_BUD = createItem(new BlockItem(CACBlocks.SMALL_PERIDOT_BUD, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)), Registry.BLOCK.getId(CACBlocks.SMALL_PERIDOT_BUD));
     public static final Item RAW_PERIDOT_BLOCK = createItem(new BlockItem(CACBlocks.RAW_PERIDOT_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)), Registry.BLOCK.getId(CACBlocks.RAW_PERIDOT_BLOCK));
     public static final Item RAW_BUDDING_PERIDOT_BLOCK = createItem(new BlockItem(CACBlocks.RAW_BUDDING_PERIDOT_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)), Registry.BLOCK.getId(CACBlocks.RAW_BUDDING_PERIDOT_BLOCK));
+
+    public static final Item PERIDOT_DAGGER = createItem(new DaggerItem(CACToolMaterials.PERIDOT, 3, -0.5f, (new Item.Settings()).group(ItemGroup.MISC)), "peridot_dagger");
 
     //------------------------------------------------------------------------
     public static Item createItem(Item item, Identifier id) {
