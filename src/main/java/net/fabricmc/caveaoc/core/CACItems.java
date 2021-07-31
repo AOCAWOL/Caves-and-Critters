@@ -2,6 +2,7 @@ package net.fabricmc.caveaoc.core;
 
 import net.fabricmc.caveaoc.CavesAndCrittersMain;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
@@ -17,7 +18,12 @@ public class CACItems {
     //------------------------------------------------------------------------
     public static final Item RAW_PERIDOT = createItem(new Item(new Item.Settings().group(ItemGroup.MISC)), "raw_peridot");
 
-
+    public static final Item PERIDOT_CLUSTER = createItem(new BlockItem(CACBlocks.PERIDOT_CLUSTER, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)), Registry.BLOCK.getId(CACBlocks.PERIDOT_CLUSTER));
+    public static final Item LARGE_PERIDOT_BUD = createItem(new BlockItem(CACBlocks.LARGE_PERIDOT_BUD, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)), Registry.BLOCK.getId(CACBlocks.LARGE_PERIDOT_BUD));
+    public static final Item MEDIUM_PERIDOT_BUD = createItem(new BlockItem(CACBlocks.MEDIUM_PERIDOT_BUD, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)), Registry.BLOCK.getId(CACBlocks.MEDIUM_PERIDOT_BUD));
+    public static final Item SMALL_PERIDOT_BUD = createItem(new BlockItem(CACBlocks.SMALL_PERIDOT_BUD, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)), Registry.BLOCK.getId(CACBlocks.SMALL_PERIDOT_BUD));
+    public static final Item RAW_PERIDOT_BLOCK = createItem(new BlockItem(CACBlocks.RAW_PERIDOT_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)), Registry.BLOCK.getId(CACBlocks.RAW_PERIDOT_BLOCK));
+    public static final Item RAW_BUDDING_PERIDOT_BLOCK = createItem(new BlockItem(CACBlocks.RAW_BUDDING_PERIDOT_BLOCK, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)), Registry.BLOCK.getId(CACBlocks.RAW_BUDDING_PERIDOT_BLOCK));
 
     //------------------------------------------------------------------------
     public static Item createItem(Item item, Identifier id) {

@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.fabricmc.caveaoc.CavesAndCrittersMain"
+    ],
+    "client": [
+      "net.fabricmc.caveaoc.client.CACClient"
     ]
   },
   "mixins": [
