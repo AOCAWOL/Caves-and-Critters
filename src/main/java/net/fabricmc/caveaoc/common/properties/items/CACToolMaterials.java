@@ -1,59 +1,58 @@
 package net.fabricmc.caveaoc.common.properties.items;
 
 import net.fabricmc.caveaoc.core.CACItems;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.Items;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.item.ToolMaterials;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.tag.ItemTags;
-import net.minecraft.util.Lazy;
+import net.minecraft.util.LazyLoadedValue;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Supplier;
 
-public enum CACToolMaterials implements ToolMaterial {
+public enum CACToolMaterials implements Tier {
     PERIDOT(3, 950, 6.5F, 1.5F, 15, () -> {
-        return Ingredient.ofItems(CACItems.RAW_PERIDOT);
+        return Ingredient.of(CACItems.RAW_PERIDOT);
     });
 
 
-    private final int miningLevel;
-    private final int itemDurability;
-    private final float miningSpeed;
-    private final float attackDamage;
-    private final int enchantability;
-    private final Lazy<Ingredient> repairIngredient;
+    private final int level;
+    private final int uses;
+    private final float speed;
+    private final float damage;
+    private final int enchantmentValue;
+    private final LazyLoadedValue<Ingredient> repairIngredient;
 
-    CACToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
-        this.miningLevel = miningLevel;
-        this.itemDurability = itemDurability;
-        this.miningSpeed = miningSpeed;
-        this.attackDamage = attackDamage;
-        this.enchantability = enchantability;
-        this.repairIngredient = new Lazy(repairIngredient);
+
+    CACToolMaterials(int j, int k, float f, float g, int l, Supplier<Ingredient> supplier) {
+        this.level = j;
+        this.uses = k;
+        this.speed = f;
+        this.damage = g;
+        this.enchantmentValue = l;
+        this.repairIngredient = new LazyLoadedValue(supplier);
     }
 
-    public int getDurability() {
-        return this.itemDurability;
+    public int getUses() {
+        return this.uses;
     }
 
-    public float getMiningSpeedMultiplier() {
-        return this.miningSpeed;
+    public float getSpeed() {
+        return this.speed;
     }
 
-    public float getAttackDamage() {
-        return this.attackDamage;
+    public float getAttackDamageBonus() {
+        return this.damage;
     }
 
-    public int getMiningLevel() {
-        return this.miningLevel;
+    public int getLevel() {
+        return this.level;
     }
 
-    public int getEnchantability() {
-        return this.enchantability;
+    public int getEnchantmentValue() {
+        return this.enchantmentValue;
     }
 
     public Ingredient getRepairIngredient() {
-        return this.repairIngredient.get();
+        return (Ingredient)this.repairIngredient.get();
     }
 }

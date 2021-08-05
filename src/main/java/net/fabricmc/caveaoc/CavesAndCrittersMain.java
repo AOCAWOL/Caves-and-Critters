@@ -6,8 +6,6 @@ import net.fabricmc.caveaoc.core.CACEntities;
 import net.fabricmc.caveaoc.core.CACItems;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
