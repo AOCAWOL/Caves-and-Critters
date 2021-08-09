@@ -26,9 +26,13 @@ public class CACItems {
     public static final Item MEDIUM_PERIDOT_BUD = createItem(new BlockItem(CACBlocks.MEDIUM_PERIDOT_BUD, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.MEDIUM_PERIDOT_BUD));
     public static final Item SMALL_PERIDOT_BUD = createItem(new BlockItem(CACBlocks.SMALL_PERIDOT_BUD, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.SMALL_PERIDOT_BUD));
     public static final Item RAW_PERIDOT_BLOCK = createItem(new BlockItem(CACBlocks.RAW_PERIDOT_BLOCK, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.RAW_PERIDOT_BLOCK));
-
     public static final Item RAW_BUDDING_PERIDOT_BLOCK = createItem(new BlockItem(CACBlocks.RAW_BUDDING_PERIDOT_BLOCK, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.RAW_BUDDING_PERIDOT_BLOCK));
+
     public static final Item PERIDOT_DAGGER = createItem(new DaggerItem(CACToolMaterials.PERIDOT, 3, -0.5f, (new Item.Properties()).tab(CreativeModeTab.TAB_COMBAT)), "peridot_dagger");
+
+    public static final Item PILLOW_LAVA = createItem(new BlockItem(CACBlocks.PILLOW_LAVA, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.PILLOW_LAVA));
+    public static final Item CRUMBLY_STONE = createItem(new BlockItem(CACBlocks.CRUMBLY_STONE, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.CRUMBLY_STONE));
+    public static final Item DEEP_CRUMBLY_STONE = createItem(new BlockItem(CACBlocks.DEEP_CRUMBLY_STONE, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.DEEP_CRUMBLY_STONE));
 
     //------------------------------------------------------------------------
 

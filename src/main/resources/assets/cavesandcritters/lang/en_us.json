@@ -6,5 +6,10 @@
   "block.cavesandcritters.peridot_cluster": "Peridot Cluster",
   "block.cavesandcritters.large_peridot_bud": "Large Peridot Bud",
   "block.cavesandcritters.medium_peridot_bud": "Medium Peridot Bud",
-  "block.cavesandcritters.small_peridot_bud": "Small Peridot Bud"
+  "block.cavesandcritters.small_peridot_bud": "Small Peridot Bud",
+  "block.cavesandcritters.pillow_lava": "Pillow Lava",
+  "block.cavesandcritters.crumbly_stone": "Crumbly Stone",
+  "block.cavesandcritters.deep_crumbly_stone": "Deep Crumbly Stone"
+
+
 }

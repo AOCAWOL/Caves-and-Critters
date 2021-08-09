@@ -40,9 +40,9 @@ public class DaggerItem extends SwordItem implements Vanishable {
 
         player.playSound(SoundEvents.PLAYER_ATTACK_SWEEP, 1.0F, 1.0F/(RandomUtils.nextFloat()*.4F +.8F));
 
-        player.level.addParticle(ParticleTypes.LARGE_SMOKE, player.getX() + 0.5D, player.getY() + 0.5D, player.getZ() + 0.5D, player.getRandom().nextFloat() / 2.0F, 5.0E-5D, player.getRandom().nextFloat() / 2.0F);
-        player.level.addParticle(ParticleTypes.LARGE_SMOKE, player.getX() + 0.5D, player.getY() + 0.5D, player.getZ() + 0.5D, player.getRandom().nextFloat() / 2.0F, 5.0E-5D, player.getRandom().nextFloat() / 2.0F);
-        player.level.addParticle(ParticleTypes.LARGE_SMOKE, player.getX() + 0.5D, player.getY() + 0.5D, player.getZ() + 0.5D, player.getRandom().nextFloat() / 2.0F, 5.0E-5D, player.getRandom().nextFloat() / 2.0F);
+        player.level.addParticle(ParticleTypes.CRIT, player.getX() + 0.5D, player.getY() + 0.5D, player.getZ() + 0.5D, player.getRandom().nextFloat() / 2.0F, 5.0E-5D, player.getRandom().nextFloat() / 2.0F);
+        player.level.addParticle(ParticleTypes.CRIT, player.getX() + 0.5D, player.getY() + 0.5D, player.getZ() + 0.5D, player.getRandom().nextFloat() / 2.0F, 5.0E-5D, player.getRandom().nextFloat() / 2.0F);
+        player.level.addParticle(ParticleTypes.CRIT, player.getX() + 0.5D, player.getY() + 0.5D, player.getZ() + 0.5D, player.getRandom().nextFloat() / 2.0F, 5.0E-5D, player.getRandom().nextFloat() / 2.0F);
 
         itemStack.hurtAndBreak(1, player, (playerx) -> {
             playerx.broadcastBreakEvent(interactionHand);

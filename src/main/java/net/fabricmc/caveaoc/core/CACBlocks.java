@@ -2,6 +2,8 @@ package net.fabricmc.caveaoc.core;
 
 import net.fabricmc.caveaoc.CavesAndCrittersMain;
 import net.fabricmc.caveaoc.common.properties.blocks.BuddingPeridotBlock;
+import net.fabricmc.caveaoc.common.properties.blocks.CrumblyBlock;
+import net.fabricmc.caveaoc.common.properties.blocks.PillowLavaBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -27,8 +29,11 @@ public class CACBlocks {
     public static final Block MEDIUM_PERIDOT_BUD = createPeridotCrystal(8,4,3, SoundType.MEDIUM_AMETHYST_BUD,"medium_peridot_bud");
     public static final Block SMALL_PERIDOT_BUD = createPeridotCrystal(5,3,4, SoundType.SMALL_AMETHYST_BUD,"small_peridot_bud");
 
+    public static final Block PILLOW_LAVA = createPillowLavaBlock(8, SoundType.NETHERRACK,"pillow_lava");
     public static final Block RAW_PERIDOT_BLOCK = createPeridotBlock(5, SoundType.AMETHYST_CLUSTER,"raw_peridot_block");
     public static final Block RAW_BUDDING_PERIDOT_BLOCK = createBuddingPeridotBlock(5, SoundType.AMETHYST_CLUSTER,"raw_budding_peridot_block");
+    public static final Block CRUMBLY_STONE = createCrumblyStoneBlock(SoundType.DRIPSTONE_BLOCK, MaterialColor.STONE,"crumbly_stone");
+    public static final Block DEEP_CRUMBLY_STONE = createCrumblyStoneBlock(SoundType.DRIPSTONE_BLOCK, MaterialColor.DEEPSLATE,"deep_crumbly_stone");
 
     //------------------------------------------------------------------------
     static Block createPeridotCrystal(int light, int height, int xzOffset, SoundType sound, String id) {
@@ -47,6 +52,20 @@ public class CACBlocks {
 
     static Block createBuddingPeridotBlock(int light, SoundType sound, String id) {
         Block createBlock = new BuddingPeridotBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.EMERALD).requiresCorrectToolForDrops().sound(sound).randomTicks().strength(1.5f).lightLevel((state) -> light));
+        Registry.register(Registry.BLOCK, new ResourceLocation(CavesAndCrittersMain.MOD_ID, id), createBlock);
+        blocksList.add(createBlock);
+        return createBlock;
+    }
+
+    static Block createPillowLavaBlock(int light, SoundType sound, String id) {
+        Block createBlock = new PillowLavaBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).requiresCorrectToolForDrops().sound(sound).randomTicks().strength(1.5f).lightLevel((state) -> light));
+        Registry.register(Registry.BLOCK, new ResourceLocation(CavesAndCrittersMain.MOD_ID, id), createBlock);
+        blocksList.add(createBlock);
+        return createBlock;
+    }
+
+    static Block createCrumblyStoneBlock(SoundType sound, MaterialColor materialColor, String id) {
+        Block createBlock = new CrumblyBlock(BlockBehaviour.Properties.of(Material.STONE, materialColor).requiresCorrectToolForDrops().sound(sound).strength(1.5f));
         Registry.register(Registry.BLOCK, new ResourceLocation(CavesAndCrittersMain.MOD_ID, id), createBlock);
         blocksList.add(createBlock);
         return createBlock;
