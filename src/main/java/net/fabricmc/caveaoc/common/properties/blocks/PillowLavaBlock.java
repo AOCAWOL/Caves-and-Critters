@@ -64,7 +64,7 @@ public class PillowLavaBlock extends Block {
             level.setBlockAndUpdate(blockPos, Blocks.LAVA.defaultBlockState());
             level.neighborChanged(blockPos, Blocks.LAVA, blockPos);
             level.addParticle(ParticleTypes.LARGE_SMOKE, d, e, f, 0.0D, 0.0D, 0.0D);
-            level.playLocalSound(d, e, f, SoundEvents.STONE_BREAK, SoundSource.BLOCKS, 0.2F + random.nextFloat() * 0.2F, 0.9F + random.nextFloat() * 0.15F, false);
+            level.playLocalSound(d, e, f, SoundEvents.DRIPSTONE_BLOCK_BREAK, SoundSource.BLOCKS, 0.2F + random.nextFloat() * 0.2F, 0.9F + random.nextFloat() * 0.15F, false);
         }
     }
 

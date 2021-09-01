@@ -33,6 +33,7 @@ public class CACItems {
     public static final Item PILLOW_LAVA = createItem(new BlockItem(CACBlocks.PILLOW_LAVA, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.PILLOW_LAVA));
     public static final Item CRUMBLY_STONE = createItem(new BlockItem(CACBlocks.CRUMBLY_STONE, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.CRUMBLY_STONE));
     public static final Item DEEP_CRUMBLY_STONE = createItem(new BlockItem(CACBlocks.DEEP_CRUMBLY_STONE, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.DEEP_CRUMBLY_STONE));
+    public static final Item MAGMATIC_VENT = createItem(new BlockItem(CACBlocks.MAGMATIC_VENT, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.MAGMATIC_VENT));
 
     //------------------------------------------------------------------------
 

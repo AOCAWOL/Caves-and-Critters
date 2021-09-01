@@ -10,7 +10,7 @@ public class CACBiomeFeatures {
         gen.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, CACConfiguredFeatures.PERIDOT_GEODE);
     }
 
-    public static void addMagmaticSurfaceVegetation(BiomeGenerationSettings.Builder builder) {
+    public static void addMagmaticVegetation(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.AZALEA_TREE_SURFACE);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.MOSS_VEGETATION_SURFACE);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.MAGMATIC_HOLLOWS_VEGETATION);

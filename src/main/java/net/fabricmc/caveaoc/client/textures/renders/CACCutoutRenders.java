@@ -14,6 +14,7 @@ public class CACCutoutRenders {
         BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.LARGE_PERIDOT_BUD, RenderType.cutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.MEDIUM_PERIDOT_BUD, RenderType.cutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.SMALL_PERIDOT_BUD, RenderType.cutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.MAGMATIC_VENT, RenderType.cutoutMipped());
 
         for (Block potBlock : CACBlocks.flowerPotBlocks)
             BlockRenderLayerMap.INSTANCE.putBlock(potBlock, RenderType.cutout());

@@ -3,6 +3,7 @@ package net.fabricmc.caveaoc.core;
 import net.fabricmc.caveaoc.CavesAndCrittersMain;
 import net.fabricmc.caveaoc.common.properties.blocks.BuddingPeridotBlock;
 import net.fabricmc.caveaoc.common.properties.blocks.CrumblyBlock;
+import net.fabricmc.caveaoc.common.properties.blocks.MagmaticVentBlock;
 import net.fabricmc.caveaoc.common.properties.blocks.PillowLavaBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
@@ -34,6 +35,7 @@ public class CACBlocks {
     public static final Block RAW_BUDDING_PERIDOT_BLOCK = createBuddingPeridotBlock(5, SoundType.AMETHYST_CLUSTER,"raw_budding_peridot_block");
     public static final Block CRUMBLY_STONE = createCrumblyStoneBlock(SoundType.DRIPSTONE_BLOCK, MaterialColor.STONE,"crumbly_stone");
     public static final Block DEEP_CRUMBLY_STONE = createCrumblyStoneBlock(SoundType.DRIPSTONE_BLOCK, MaterialColor.DEEPSLATE,"deep_crumbly_stone");
+    public static final Block MAGMATIC_VENT = createMagmaticVentBlock(SoundType.DRIPSTONE_BLOCK, MaterialColor.DEEPSLATE,"magmatic_vent");
 
     //------------------------------------------------------------------------
     static Block createPeridotCrystal(int light, int height, int xzOffset, SoundType sound, String id) {
@@ -66,6 +68,13 @@ public class CACBlocks {
 
     static Block createCrumblyStoneBlock(SoundType sound, MaterialColor materialColor, String id) {
         Block createBlock = new CrumblyBlock(BlockBehaviour.Properties.of(Material.STONE, materialColor).requiresCorrectToolForDrops().sound(sound).strength(1.5f));
+        Registry.register(Registry.BLOCK, new ResourceLocation(CavesAndCrittersMain.MOD_ID, id), createBlock);
+        blocksList.add(createBlock);
+        return createBlock;
+    }
+
+    static Block createMagmaticVentBlock(SoundType sound, MaterialColor materialColor, String id) {
+        Block createBlock = new MagmaticVentBlock(BlockBehaviour.Properties.of(Material.STONE, materialColor).requiresCorrectToolForDrops().sound(sound).randomTicks().strength(1.5f));
         Registry.register(Registry.BLOCK, new ResourceLocation(CavesAndCrittersMain.MOD_ID, id), createBlock);
         blocksList.add(createBlock);
         return createBlock;

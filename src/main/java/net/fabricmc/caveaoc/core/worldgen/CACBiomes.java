@@ -72,11 +72,10 @@ public class CACBiomes {
         BiomeDefaultFeatures.addDefaultUndergroundVariety(builder2);
         BiomeDefaultFeatures.addDefaultOres(builder2);
         BiomeDefaultFeatures.addDefaultSoftDisks(builder2);
-        BiomeDefaultFeatures.addDripstone(builder2);
         BiomeDefaultFeatures.addGiantTaigaVegetation(builder2);
         BiomeDefaultFeatures.addSurfaceFreezing(builder2);
         CACBiomeFeatures.addPeridotGeode(builder2);
-        CACBiomeFeatures.addMagmaticSurfaceVegetation(builder2);
+        CACBiomeFeatures.addMagmaticVegetation(builder2);
         return (new Biome.BiomeBuilder())
                 .precipitation(Biome.Precipitation.RAIN)
                 .biomeCategory(Biome.BiomeCategory.UNDERGROUND)

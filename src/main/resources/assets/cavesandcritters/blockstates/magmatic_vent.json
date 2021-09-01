@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": [
+      { "model": "cavesandcritters:block/magmatic_vent" },
+      { "model": "cavesandcritters:block/magmatic_vent2" }
+    ]
+  }
+}
