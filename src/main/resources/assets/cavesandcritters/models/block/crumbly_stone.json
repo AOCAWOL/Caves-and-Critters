@@ -1,7 +1,6 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "end": "cavesandcritters:block/crumbly_stone_top",
-    "side": "cavesandcritters:block/crumbly_stone"
+    "all": "cavesandcritters:block/crumbly_stone"
   }
 }

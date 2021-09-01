@@ -14,7 +14,7 @@ public class CACBiomeFeatures {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.AZALEA_TREE_SURFACE);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.MOSS_VEGETATION_SURFACE);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.MAGMATIC_HOLLOWS_VEGETATION);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.CRUMBLY_STONE);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.DEEP_CRUMBLY_STONE);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.MAGMATIC_HOLLOWS_CEILING_VEGETATION);
     }
 }
