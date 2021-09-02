@@ -1,5 +1,8 @@
 {
+  "biome.cavesandcritters.magmatic_hollows": "Magmatic Hollows",
+  "biome.cavesandcritters.crumbly_caverns": "Crumbly Caverns",
   "item.cavesandcritters.raw_peridot": "Raw Peridot",
+  "item.cavesandcritters.refined_peridot": "Refined Peridot",
   "item.cavesandcritters.peridot_dagger": "Peridot Dagger",
   "block.cavesandcritters.raw_peridot_block": "Raw Peridot Block",
   "block.cavesandcritters.raw_budding_peridot_block": "Raw Budding Peridot Block",
@@ -9,7 +12,12 @@
   "block.cavesandcritters.small_peridot_bud": "Small Peridot Bud",
   "block.cavesandcritters.pillow_lava": "Pillow Lava",
   "block.cavesandcritters.crumbly_stone": "Crumbly Stone",
-  "block.cavesandcritters.deep_crumbly_stone": "Deep Crumbly Stone"
-
+  "block.cavesandcritters.deep_crumbly_stone": "Deep Crumbly Stone",
+  "block.cavesandcritters.magmatic_vent": "Magmatic Vent",
+  "block.cavesandcritters.rooted_crumbly_stone": "Rooted Crumbly Stone",
+  "block.cavesandcritters.hanging_crumbly_roots": "Hanging Crumbly Roots",
+  "block.cavesandcritters.crumbly_rose": "Crumbly Rose",
+  "block.cavesandcritters.prim_spectral_vines": "Prim Spectral Vines",
+  "block.cavesandcritters.prim_spectral_vines_plant": "Prim Spectral Vines Plant"
 
 }

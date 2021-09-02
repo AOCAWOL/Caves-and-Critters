@@ -8,17 +8,21 @@ import net.minecraft.world.level.block.Block;
 
 public class CACCutoutRenders {
     public static void renderCutOuts() {
-        CavesAndCrittersMain.LOGGER.debug("BYG: Rendering Texture Cutouts...");
+        CavesAndCrittersMain.LOGGER.debug("CAC: Rendering Texture Cutouts...");
 
         BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.PERIDOT_CLUSTER, RenderType.cutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.LARGE_PERIDOT_BUD, RenderType.cutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.MEDIUM_PERIDOT_BUD, RenderType.cutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.SMALL_PERIDOT_BUD, RenderType.cutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.MAGMATIC_VENT, RenderType.cutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.CRUMBLY_ROSE, RenderType.cutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.HANGING_CRUMBLY_ROOTS, RenderType.cutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.PRIM_SPECTRAL_VINES, RenderType.translucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.PRIM_SPECTRAL_VINES_PLANT, RenderType.translucent());
 
         for (Block potBlock : CACBlocks.flowerPotBlocks)
             BlockRenderLayerMap.INSTANCE.putBlock(potBlock, RenderType.cutout());
 
-        CavesAndCrittersMain.LOGGER.debug("BYG: Texture Cutouts Rendered!");
+        CavesAndCrittersMain.LOGGER.debug("CAC: Texture Cutouts Rendered!");
     }
     }

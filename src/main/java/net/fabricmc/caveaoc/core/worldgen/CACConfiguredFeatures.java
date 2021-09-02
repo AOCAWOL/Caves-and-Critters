@@ -13,6 +13,8 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.AmethystClusterBlock;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CaveVines;
+import net.minecraft.world.level.block.CaveVinesBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -21,6 +23,7 @@ import net.minecraft.world.level.levelgen.feature.blockplacers.SimpleBlockPlacer
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.stateproviders.RandomizedIntStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
@@ -39,6 +42,13 @@ public class CACConfiguredFeatures {
     public static final ConfiguredFeature<?, ?> PERIDOT_PATCH_CEILING;
     public static final ConfiguredFeature<?, ?> MAGMATIC_HOLLOWS_CEILING_VEGETATION;
     public static final ConfiguredFeature<?, ?> PERIDOT;
+
+    public static final ConfiguredFeature<?, ?> CRUMBLY_VEGETATION;
+    public static final ConfiguredFeature<?, ?> CRUMBLY_PATCH;
+    public static final ConfiguredFeature<?, ?> CRUMBLY_CAVERNS_VEGETATION;
+    public static final ConfiguredFeature<?, ?> CRUMBLY_PATCH_CEILING;
+    public static final ConfiguredFeature<?, ?> CRUMBLY_CAVERNS_CEILING_VEGETATION;
+    public static final ConfiguredFeature<?, ?> CRUMBLY_CEILING_VEGETATION;
 
     public static void init() {
 
@@ -66,8 +76,17 @@ public class CACConfiguredFeatures {
         MAGMATIC_VENTS = register("magmatic_vents", Feature.SIMPLE_BLOCK.configured(new SimpleBlockConfiguration(new WeightedStateProvider(weightedBlockStateBuilder().add(CACBlocks.MAGMATIC_VENT.defaultBlockState(), 3).add(Blocks.CAVE_AIR.defaultBlockState(), 50).add(Blocks.CAVE_AIR.defaultBlockState(), 50).add(Blocks.CAVE_AIR.defaultBlockState(), 50).add(CACBlocks.MAGMATIC_VENT.defaultBlockState(), 3)))));
         PILLOW_LAVA_PATCH = register("pillow_lava_patch", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), (new WeightedStateProvider(weightedBlockStateBuilder().add(CACBlocks.PILLOW_LAVA.defaultBlockState(), 5).add(CACBlocks.DEEP_CRUMBLY_STONE.defaultBlockState(), 4).add(Blocks.DEEPSLATE.defaultBlockState(), 15))), () -> MAGMATIC_VENTS, CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.8F, UniformInt.of(4, 7), 0.3F)));
         MAGMATIC_HOLLOWS_VEGETATION = register("magmatic_hollows_vegetation", (ConfiguredFeature)((ConfiguredFeature)((ConfiguredFeature)PILLOW_LAVA_PATCH.decorated(FeatureDecorator.CAVE_SURFACE.configured(new CaveDecoratorConfiguration(CaveSurface.FLOOR, 12))).range(CACConfiguredFeatures.Decorators.RANGE_BOTTOM_TO_60)).squared()).count(40));
-        PERIDOT_PATCH_CEILING = register("peridot_patch_ceiling", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), (new WeightedStateProvider(weightedBlockStateBuilder().add(CACBlocks.RAW_PERIDOT_BLOCK.defaultBlockState(), 5).add(CACBlocks.RAW_BUDDING_PERIDOT_BLOCK.defaultBlockState(), 2).add(Blocks.DEEPSLATE.defaultBlockState(), 7))), () -> CACConfiguredFeatures.PERIDOT, CaveSurface.CEILING, UniformInt.of(1, 2), 0.0F, 5, 0.08F, UniformInt.of(4, 7), 0.3F)));
+        PERIDOT_PATCH_CEILING = register("peridot_patch_ceiling", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), (new WeightedStateProvider(weightedBlockStateBuilder().add(CACBlocks.RAW_PERIDOT_BLOCK.defaultBlockState(), 5).add(CACBlocks.RAW_BUDDING_PERIDOT_BLOCK.defaultBlockState(), 1).add(Blocks.DEEPSLATE.defaultBlockState(), 50))), () -> CACConfiguredFeatures.PERIDOT, CaveSurface.CEILING, UniformInt.of(1, 2), 0.0F, 5, 0.08F, UniformInt.of(4, 7), 0.3F)));
         MAGMATIC_HOLLOWS_CEILING_VEGETATION = register("magmatic_hollows_ceiling_vegetation", (ConfiguredFeature)((ConfiguredFeature)((ConfiguredFeature)PERIDOT_PATCH_CEILING.decorated(FeatureDecorator.CAVE_SURFACE.configured(new CaveDecoratorConfiguration(CaveSurface.CEILING, 12))).range(CACConfiguredFeatures.Decorators.RANGE_BOTTOM_TO_60)).squared()).count(40));
+
+        CRUMBLY_VEGETATION = register("crumbly_vegetation", Feature.SIMPLE_BLOCK.configured(new SimpleBlockConfiguration(new WeightedStateProvider(weightedBlockStateBuilder().add(CACBlocks.CRUMBLY_ROSE.defaultBlockState(), 1).add(Blocks.CAVE_AIR.defaultBlockState(), 50).add(Blocks.MOSS_CARPET.defaultBlockState(), 25)))));
+        CRUMBLY_PATCH = register("crumbly_patch", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), (new WeightedStateProvider(weightedBlockStateBuilder().add(CACBlocks.CRUMBLY_STONE.defaultBlockState(), 2).add(Blocks.MOSS_BLOCK.defaultBlockState(), 5).add(CACBlocks.ROOTED_CRUMBLY_STONE.defaultBlockState(), 50))), () -> CRUMBLY_VEGETATION, CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.8F, UniformInt.of(4, 7), 0.3F)));
+        CRUMBLY_CAVERNS_VEGETATION = register("crumbly_caverns_vegetation", (ConfiguredFeature)((ConfiguredFeature)((ConfiguredFeature)CRUMBLY_PATCH.decorated(FeatureDecorator.CAVE_SURFACE.configured(new CaveDecoratorConfiguration(CaveSurface.FLOOR, 12))).range(CACConfiguredFeatures.Decorators.RANGE_BOTTOM_TO_60)).squared()).count(40));
+
+        CRUMBLY_CEILING_VEGETATION = register("crumbly_ceiling_vegetation", Feature.SIMPLE_BLOCK.configured(new SimpleBlockConfiguration(new WeightedStateProvider(weightedBlockStateBuilder().add(Blocks.CAVE_AIR.defaultBlockState(), 45).add(CACBlocks.HANGING_CRUMBLY_ROOTS.defaultBlockState(), 25).add(CACBlocks.PRIM_SPECTRAL_VINES.defaultBlockState(), 35)))));
+        CRUMBLY_PATCH_CEILING = register("crumbly_patch_ceiling", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), (new WeightedStateProvider(weightedBlockStateBuilder().add(CACBlocks.CRUMBLY_STONE.defaultBlockState(), 2).add(Blocks.MOSS_BLOCK.defaultBlockState(), 5).add(CACBlocks.ROOTED_CRUMBLY_STONE.defaultBlockState(), 50))), () -> CRUMBLY_CEILING_VEGETATION, CaveSurface.CEILING, UniformInt.of(1, 2), 0.0F, 5, 0.08F, UniformInt.of(4, 7), 0.3F)));
+        CRUMBLY_CAVERNS_CEILING_VEGETATION = register("crumbly_caverns_ceiling_vegetation", (ConfiguredFeature)((ConfiguredFeature)((ConfiguredFeature)CRUMBLY_PATCH_CEILING.decorated(FeatureDecorator.CAVE_SURFACE.configured(new CaveDecoratorConfiguration(CaveSurface.CEILING, 12))).range(CACConfiguredFeatures.Decorators.RANGE_BOTTOM_TO_60)).squared()).count(40));
+
     }
 
 

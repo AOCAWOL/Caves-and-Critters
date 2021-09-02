@@ -10,11 +10,15 @@ public class CACBiomeFeatures {
         gen.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, CACConfiguredFeatures.PERIDOT_GEODE);
     }
 
-    public static void addMagmaticVegetation(BiomeGenerationSettings.Builder builder) {
+    public static void addMagmaticHollowsVegetation(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.AZALEA_TREE_SURFACE);
-        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.MOSS_VEGETATION_SURFACE);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.MAGMATIC_HOLLOWS_VEGETATION);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.DEEP_CRUMBLY_STONE);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.MAGMATIC_HOLLOWS_CEILING_VEGETATION);
+    }
+
+    public static void addCrumblyCavernsVegetation(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.CRUMBLY_CAVERNS_VEGETATION);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CACConfiguredFeatures.CRUMBLY_CAVERNS_CEILING_VEGETATION);
     }
 }

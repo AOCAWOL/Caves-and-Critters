@@ -19,10 +19,13 @@ import net.minecraft.world.level.biome.MobSpawnSettings;
 
 public class CACBiomes {
     public static final ResourceKey<Biome> MAGMATIC_HOLLOWS = add("magmatic_hollows");
+    public static final ResourceKey<Biome> CRUMBLY_CAVERNS = add("crumbly_caverns");
 
     @SuppressWarnings("deprecation") // bad fabric api
     public static void init() {
         register(MAGMATIC_HOLLOWS, magmaticHollows(0.1f, 0.2f));
+        register(CRUMBLY_CAVERNS, crumblyCaverns(0.1f, 0.2f));
+
 //        register(PINE_FOREST_HILLS, pineForest(0.45f, 0.3f));
 //        register(PINE_FOREST_CLEARING, pineForestClearing(0.1f, 0.2f));
 //        register(PINE_MIRE, pineMire(0f, -0.1f));
@@ -31,6 +34,7 @@ public class CACBiomes {
 //        register(FELL_EDGE, fellEdge(0.5f, 0.3f));
 //
         OverworldBiomes.addContinentalBiome(MAGMATIC_HOLLOWS, OverworldClimate.COOL, 1.0);
+        OverworldBiomes.addContinentalBiome(CRUMBLY_CAVERNS, OverworldClimate.COOL, 1.0);
 //        OverworldBiomes.addHillsBiome(PINE_FOREST, PINE_FOREST_HILLS, 1.0);
 //        OverworldBiomes.addBiomeVariant(PINE_FOREST, PINE_FOREST_HILLS, 0.3);
 //        OverworldBiomes.addContinentalBiome(PINE_MIRE, OverworldClimate.TEMPERATE, 1.0);
@@ -74,8 +78,7 @@ public class CACBiomes {
         BiomeDefaultFeatures.addDefaultSoftDisks(builder2);
         BiomeDefaultFeatures.addGiantTaigaVegetation(builder2);
         BiomeDefaultFeatures.addSurfaceFreezing(builder2);
-        CACBiomeFeatures.addPeridotGeode(builder2);
-        CACBiomeFeatures.addMagmaticVegetation(builder2);
+        CACBiomeFeatures.addMagmaticHollowsVegetation(builder2);
         return (new Biome.BiomeBuilder())
                 .precipitation(Biome.Precipitation.RAIN)
                 .biomeCategory(Biome.BiomeCategory.UNDERGROUND)
@@ -94,6 +97,42 @@ public class CACBiomes {
     private static Biome magmaticHollows(float depth, float scale) {
         // noinspection CodeBlock2Expr
         return magmaticHollows();
+    }
+
+    public static Biome crumblyCaverns() {
+        MobSpawnSettings.Builder builder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(builder);
+        net.minecraft.world.level.biome.BiomeGenerationSettings.Builder builder2 = (new net.minecraft.world.level.biome.BiomeGenerationSettings.Builder()).surfaceBuilder(SurfaceBuilders.GRAVELLY_MOUNTAIN);
+        BiomeDefaultFeatures.addDefaultOverworldLandStructures(builder2);
+        builder2.addStructureStart(StructureFeatures.RUINED_PORTAL_STANDARD);
+        BiomeDefaultFeatures.addDefaultCarvers(builder2);
+        BiomeDefaultFeatures.addDefaultLakes(builder2);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(builder2);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(builder2);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(builder2);
+        BiomeDefaultFeatures.addDefaultOres(builder2);
+        BiomeDefaultFeatures.addDefaultSoftDisks(builder2);
+        BiomeDefaultFeatures.addMountainTrees(builder2);
+        BiomeDefaultFeatures.addSurfaceFreezing(builder2);
+        CACBiomeFeatures.addCrumblyCavernsVegetation(builder2);
+        return (new Biome.BiomeBuilder())
+                .precipitation(Biome.Precipitation.RAIN)
+                .biomeCategory(Biome.BiomeCategory.UNDERGROUND)
+                .depth(0.1F).scale(0.2F)
+                .temperature(0.5F).downfall(0.5F)
+                .specialEffects((new net.minecraft.world.level.biome.BiomeSpecialEffects.Builder())
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .grassColorOverride(5406551)
+                        .foliageColorOverride(6589494)
+                        .fogColor(12638463)
+                        .skyColor(calculateSkyColor(0.5F))
+                        .build()).mobSpawnSettings(builder.build()).generationSettings(builder2.build()).build();
+    }
+
+    private static Biome crumblyCaverns(float depth, float scale) {
+        // noinspection CodeBlock2Expr
+        return crumblyCaverns();
     }
 
 }

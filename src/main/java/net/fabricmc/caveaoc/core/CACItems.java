@@ -20,6 +20,7 @@ public class CACItems {
     public static List<Item> itemsList = new ArrayList<>();
     //------------------------------------------------------------------------
     public static final Item RAW_PERIDOT = createItem(new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)), "raw_peridot");
+    public static final Item REFINED_PERIDOT = createItem(new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)), "refined_peridot");
 
     public static final Item PERIDOT_CLUSTER = createItem(new BlockItem(CACBlocks.PERIDOT_CLUSTER, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.PERIDOT_CLUSTER));
     public static final Item LARGE_PERIDOT_BUD = createItem(new BlockItem(CACBlocks.LARGE_PERIDOT_BUD, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.LARGE_PERIDOT_BUD));
@@ -31,9 +32,14 @@ public class CACItems {
     public static final Item PERIDOT_DAGGER = createItem(new DaggerItem(CACToolMaterials.PERIDOT, 3, -0.5f, (new Item.Properties()).tab(CreativeModeTab.TAB_COMBAT)), "peridot_dagger");
 
     public static final Item PILLOW_LAVA = createItem(new BlockItem(CACBlocks.PILLOW_LAVA, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.PILLOW_LAVA));
-    public static final Item CRUMBLY_STONE = createItem(new BlockItem(CACBlocks.CRUMBLY_STONE, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.CRUMBLY_STONE));
     public static final Item DEEP_CRUMBLY_STONE = createItem(new BlockItem(CACBlocks.DEEP_CRUMBLY_STONE, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.DEEP_CRUMBLY_STONE));
     public static final Item MAGMATIC_VENT = createItem(new BlockItem(CACBlocks.MAGMATIC_VENT, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.MAGMATIC_VENT));
+
+    public static final Item CRUMBLY_STONE = createItem(new BlockItem(CACBlocks.CRUMBLY_STONE, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.CRUMBLY_STONE));
+    public static final Item ROOTED_CRUMBLY_STONE = createItem(new BlockItem(CACBlocks.ROOTED_CRUMBLY_STONE, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.ROOTED_CRUMBLY_STONE));
+    public static final Item HANGING_CRUMBLY_ROOTS = createItem(new BlockItem(CACBlocks.HANGING_CRUMBLY_ROOTS, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.HANGING_CRUMBLY_ROOTS));
+    public static final Item CRUMBLY_ROSE = createItem(new BlockItem(CACBlocks.CRUMBLY_ROSE, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.CRUMBLY_ROSE));
+    public static final Item PRIM_SPECTRAL_VINES = createItem(new BlockItem(CACBlocks.PRIM_SPECTRAL_VINES, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.PRIM_SPECTRAL_VINES));
 
     //------------------------------------------------------------------------
 
