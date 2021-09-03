@@ -2,7 +2,7 @@
   "ambientocclusion": false,
   "textures": {
     "prim_spectral_vines_plant": "cavesandcritters:block/prim_spectral_vines_plant",
-    "particle": "byg:cavesandcritters/prim_spectral_vines_plant"
+    "particle": "cavesandcritters:block/prim_spectral_vines_plant"
   },
   "elements": [
     {

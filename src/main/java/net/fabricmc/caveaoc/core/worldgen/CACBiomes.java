@@ -79,6 +79,7 @@ public class CACBiomes {
         BiomeDefaultFeatures.addGiantTaigaVegetation(builder2);
         BiomeDefaultFeatures.addSurfaceFreezing(builder2);
         CACBiomeFeatures.addMagmaticHollowsVegetation(builder2);
+        CACBiomeFeatures.addPeridotGeode(builder2);
         return (new Biome.BiomeBuilder())
                 .precipitation(Biome.Precipitation.RAIN)
                 .biomeCategory(Biome.BiomeCategory.UNDERGROUND)
@@ -93,7 +94,6 @@ public class CACBiomes {
                         .skyColor(calculateSkyColor(0.5F))
                         .build()).mobSpawnSettings(builder.build()).generationSettings(builder2.build()).build();
     }
-
     private static Biome magmaticHollows(float depth, float scale) {
         // noinspection CodeBlock2Expr
         return magmaticHollows();
@@ -129,7 +129,6 @@ public class CACBiomes {
                         .skyColor(calculateSkyColor(0.5F))
                         .build()).mobSpawnSettings(builder.build()).generationSettings(builder2.build()).build();
     }
-
     private static Biome crumblyCaverns(float depth, float scale) {
         // noinspection CodeBlock2Expr
         return crumblyCaverns();
