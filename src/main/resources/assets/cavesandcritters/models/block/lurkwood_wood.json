@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "cavesandcritters:block/lurkwood_log",
+    "side": "cavesandcritters:block/lurkwood_log"
+  }
+}

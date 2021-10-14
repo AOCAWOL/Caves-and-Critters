@@ -2,11 +2,16 @@ package net.fabricmc.caveaoc.core;
 
 import net.fabricmc.caveaoc.CavesAndCrittersMain;
 import net.fabricmc.caveaoc.common.properties.blocks.*;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import org.intellij.lang.annotations.Identifier;
@@ -41,7 +46,45 @@ public class CACBlocks {
     public static final Block PRIM_SPECTRAL_VINES = createPrimSpectralVinesBlock(10, SoundType.CAVE_VINES, MaterialColor.TERRACOTTA_WHITE,"prim_spectral_vines");
     public static final Block PRIM_SPECTRAL_VINES_PLANT = createPrimSpectralVinesPlantBlock(10, SoundType.CAVE_VINES, MaterialColor.TERRACOTTA_WHITE,"prim_spectral_vines_plant");
 
+    public static final Block LURKWOOD_LOG = createLogBlock(MaterialColor.GRASS, MaterialColor.WOOD, SoundType.WOOD,"lurkwood_log");
+    public static final Block LURKWOOD_WOOD = createLogBlock(MaterialColor.GRASS, MaterialColor.GRASS, SoundType.WOOD,"lurkwood_wood");
+    public static final Block STRIPPED_LURKWOOD_LOG = createLogBlock(MaterialColor.WOOD, MaterialColor.WOOD, SoundType.WOOD,"stripped_lurkwood_log");
+    public static final Block STRIPPED_LURKWOOD_WOOD = createLogBlock(MaterialColor.WOOD, MaterialColor.WOOD, SoundType.WOOD,"stripped_lurkwood_wood");
+    public static final Block LURKWOOD_PLANKS = createPlanksBlock(MaterialColor.WOOD, SoundType.WOOD,"lurkwood_planks");
+
+    public static final Block LURKWOOD_SAPLING = createSaplingBlock(MaterialColor.PLANT, SoundType.AZALEA,"lurkwood_sapling");
+    public static final Block LURKWOOD_LEAVES = createLeavesBlock(MaterialColor.TERRACOTTA_GREEN, SoundType.AZALEA_LEAVES,"lurkwood_leaves");
+
     //------------------------------------------------------------------------
+    static Block createLogBlock(MaterialColor materialColor, MaterialColor materialColor2, SoundType sound, String id) {
+        Block createBlock = new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, (blockState) -> blockState.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? materialColor : materialColor2).sound(sound).strength(2.0f));
+        Registry.register(Registry.BLOCK, new ResourceLocation(CavesAndCrittersMain.MOD_ID, id), createBlock);
+        blocksList.add(createBlock);
+        return createBlock;
+    }
+
+    static Block createPlanksBlock(MaterialColor materialColor, SoundType sound, String id) {
+        Block createBlock = new Block(BlockBehaviour.Properties.of(Material.WOOD, materialColor).sound(sound).strength(2.0f,3.0f));
+        Registry.register(Registry.BLOCK, new ResourceLocation(CavesAndCrittersMain.MOD_ID, id), createBlock);
+        blocksList.add(createBlock);
+        return createBlock;
+    }
+
+    static Block createSaplingBlock(MaterialColor materialColor, SoundType sound, String id) {
+        Block createBlock = new FlowerBlock(MobEffects.MOVEMENT_SLOWDOWN, 5, BlockBehaviour.Properties.of(Material.PLANT, materialColor).sound(sound).noCollission().instabreak());
+        Registry.register(Registry.BLOCK, new ResourceLocation(CavesAndCrittersMain.MOD_ID, id), createBlock);
+        blocksList.add(createBlock);
+        return createBlock;
+    }
+
+    static Block createLeavesBlock(MaterialColor materialColor, SoundType sound, String id) {
+        Block createBlock = new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, materialColor).sound(sound).randomTicks().noOcclusion().isValidSpawn(CACBlocks::ocelotOrParrot).isSuffocating(CACBlocks::never).isViewBlocking(CACBlocks::never));
+        Registry.register(Registry.BLOCK, new ResourceLocation(CavesAndCrittersMain.MOD_ID, id), createBlock);
+        blocksList.add(createBlock);
+        return createBlock;
+    }
+
+
     static Block createPeridotBudBlock(int light, int height, int xzOffset, SoundType sound, String id) {
         Block createBlock = new AmethystClusterBlock(height, xzOffset, BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.EMERALD).noOcclusion().sound(sound).randomTicks().strength(1.5f).lightLevel((state) -> light));
         Registry.register(Registry.BLOCK, new ResourceLocation(CavesAndCrittersMain.MOD_ID, id), createBlock);
@@ -126,8 +169,18 @@ public class CACBlocks {
         return createBlock;
     }
 
+    private static Boolean ocelotOrParrot(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, EntityType<?> entityType) {
+        return entityType == EntityType.OCELOT || entityType == EntityType.PARROT;
+    }
+
+    private static boolean never(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+        return false;
+    }
+
     public static void init() {
     }
+
+
 
     public static class GrassPathBlockAccess extends DirtPathBlock {
 

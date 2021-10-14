@@ -19,6 +19,8 @@ public class CACCutoutRenders {
         BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.HANGING_CRUMBLY_ROOTS, RenderType.cutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.PRIM_SPECTRAL_VINES, RenderType.translucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.PRIM_SPECTRAL_VINES_PLANT, RenderType.translucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.LURKWOOD_LEAVES, RenderType.cutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(CACBlocks.LURKWOOD_SAPLING, RenderType.cutoutMipped());
 
         for (Block potBlock : CACBlocks.flowerPotBlocks)
             BlockRenderLayerMap.INSTANCE.putBlock(potBlock, RenderType.cutout());

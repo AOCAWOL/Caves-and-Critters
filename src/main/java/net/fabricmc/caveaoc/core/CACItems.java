@@ -6,6 +6,8 @@ import net.fabricmc.caveaoc.common.properties.items.DaggerItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -40,6 +42,15 @@ public class CACItems {
     public static final Item HANGING_CRUMBLY_ROOTS = createItem(new BlockItem(CACBlocks.HANGING_CRUMBLY_ROOTS, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.HANGING_CRUMBLY_ROOTS));
     public static final Item CRUMBLY_ROSE = createItem(new BlockItem(CACBlocks.CRUMBLY_ROSE, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.CRUMBLY_ROSE));
     public static final Item PRIM_SPECTRAL_VINES = createItem(new BlockItem(CACBlocks.PRIM_SPECTRAL_VINES, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.PRIM_SPECTRAL_VINES));
+
+    public static final Item LURKWOOD_LOG = createItem(new BlockItem(CACBlocks.LURKWOOD_LOG, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.LURKWOOD_LOG));
+    public static final Item LURKWOOD_WOOD = createItem(new BlockItem(CACBlocks.LURKWOOD_WOOD, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.LURKWOOD_WOOD));
+    public static final Item STRIPPED_LURKWOOD_LOG = createItem(new BlockItem(CACBlocks.STRIPPED_LURKWOOD_LOG, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.STRIPPED_LURKWOOD_LOG));
+    public static final Item STRIPPED_LURKWOOD_WOOD = createItem(new BlockItem(CACBlocks.STRIPPED_LURKWOOD_WOOD, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.STRIPPED_LURKWOOD_WOOD));
+    public static final Item LURKWOOD_PLANKS = createItem(new BlockItem(CACBlocks.LURKWOOD_PLANKS, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.LURKWOOD_PLANKS));
+    public static final Item LURKWOOD_SAPLING = createItem(new BlockItem(CACBlocks.LURKWOOD_SAPLING, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.LURKWOOD_SAPLING));
+    public static final Item LURKWOOD_LEAVES = createItem(new BlockItem(CACBlocks.LURKWOOD_LEAVES, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)), Registry.BLOCK.getKey(CACBlocks.LURKWOOD_LEAVES));
+    public static final Item LURK_FRUIT = createItem(new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(Foods.APPLE)), "lurk_fruit");
 
     //------------------------------------------------------------------------
 
