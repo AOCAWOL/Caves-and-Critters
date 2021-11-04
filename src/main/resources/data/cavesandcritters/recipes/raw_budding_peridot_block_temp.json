@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RRR",
+    "RNR",
+    "RRR"
+  ],
+  "key": {
+    "R": {
+      "item": "cavesandcritters:raw_peridot_block"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "cavesandcritters:raw_budding_peridot_block"
+  }
+}

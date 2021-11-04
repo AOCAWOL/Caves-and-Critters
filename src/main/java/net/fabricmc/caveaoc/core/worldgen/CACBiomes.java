@@ -28,10 +28,9 @@ public class CACBiomes {
         register(CRUMBLY_CAVERNS, crumblyCaverns(0.1f, 0.2f));
         register(LURKED_HYPOGEAL, lurkedHypogeal(0.1f, 0.2f));
 
-
-        OverworldBiomes.addContinentalBiome(MAGMATIC_HOLLOWS, OverworldClimate.DRY, 1.0);
-        OverworldBiomes.addContinentalBiome(CRUMBLY_CAVERNS, OverworldClimate.COOL, 1.0);
-        OverworldBiomes.addContinentalBiome(LURKED_HYPOGEAL, OverworldClimate.TEMPERATE, 1.0);
+//        OverworldBiomes.addContinentalBiome(MAGMATIC_HOLLOWS, OverworldClimate.DRY, 0);
+//        OverworldBiomes.addContinentalBiome(CRUMBLY_CAVERNS, OverworldClimate.COOL, 0);
+//        OverworldBiomes.addContinentalBiome(LURKED_HYPOGEAL, OverworldClimate.TEMPERATE, 0);
     }
 
 

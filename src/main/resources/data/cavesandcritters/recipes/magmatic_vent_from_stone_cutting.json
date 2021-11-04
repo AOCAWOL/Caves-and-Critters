@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "cavesandcritters:pillow_lava"
+  },
+  "result": "cavesandcritters:magmatic_vent",
+  "count": 1
+}
