@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "cavesandcritters",
+  "version": "${version}",
+
+  "name": "Caves & Critters",
+  "description": "A unique cave exploration and adventure based mod.",
+  "authors": [
+    "AOCAWOL"
+  ],
+  "contact": {
+    "homepage": "https://github.com/AOCAWOL/Caves-and-Critters",
+    "sources": "https://github.com/AOCAWOL/Caves-and-Critters"
+  },
+
+  "license": "Code: LGPLv3\n Assets: All Rights Reserved",
+  "icon": "assets/cavesandcritters/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "potionstudios.cavesandcritters.CavesAndCrittersFabric"
+    ],
+    "client": [
+      "potionstudios.cavesandcritters.client.CavesAndCrittersFabricClient"
+    ],
+    "terrablender": [
+      "potionstudios.cavesandcritters.terrablender.CACTerraBlenderEntry"
+    ]
+  },
+  "mixins": [
+    "cavesandcritters.mixins.json",
+    "cavesandcritters.fabric.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": ">=1.18.2",
+    "terrablender": ">=1.1.0.99"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

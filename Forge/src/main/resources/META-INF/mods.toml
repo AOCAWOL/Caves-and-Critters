@@ -1,0 +1,36 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="Code: LGPLv3\n Assets: All Rights Reserved"
+issueTrackerURL="https://github.com/AOCAWOL/Caves-and-Critters/issues"
+[[mods]]
+modId="cavesandcritters"
+version="${file.jarVersion}" #mandatory
+displayName="Caves And Critters" #mandatory
+displayURL="https://www.curseforge.com/minecraft/mc-mods/caves-and-critters" #optional
+logoFile="multiloader.png" #optional
+credits="" #optional
+authors="AOCAWOL, Corgi Taco"
+description='''
+A unique cave exploration and adventure based mod.
+'''
+
+[[dependencies.cavesandcritters]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[40,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.cavesandcritters]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.cavesandcritters]]
+modId = "terrablender"
+mandatory = true
+versionRange = "[1.1.0.99,)"
+ordering = "NONE"
+side = "BOTH"

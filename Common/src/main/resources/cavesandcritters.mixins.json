@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "potionstudios.cavesandcritters.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "access.OrePlacementsAccess",
+    "access.OverworldBiomesAccess"
+  ],
+  "client": [
+    "access.ItemBlockRenderTypeAccess"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
